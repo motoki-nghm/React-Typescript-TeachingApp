@@ -1,0 +1,100 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --color-bg: #0b0d12;
+  --color-surface: #11141b;
+  --color-surface-2: #161a23;
+  --color-border: #232836;
+  --color-ink: #e6e8ee;
+  --color-ink-muted: #9ba3b4;
+  --color-brand: #7c5cff;
+  --color-brand-soft: #b8a6ff;
+  --color-accent: #34d399;
+  --color-warn: #fbbf24;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  color-scheme: dark;
+  font-family:
+    'Inter',
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Hiragino Kaku Gothic ProN',
+    'Noto Sans JP',
+    sans-serif;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgb(124 92 255 / 0.4);
+  color: var(--color-ink);
+}
+
+/* Tailwind Typography overrides for dark theme content */
+.prose-lesson {
+  --tw-prose-body: var(--color-ink);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-lead: var(--color-ink);
+  --tw-prose-links: var(--color-brand-soft);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-counters: var(--color-ink-muted);
+  --tw-prose-bullets: var(--color-ink-muted);
+  --tw-prose-hr: var(--color-border);
+  --tw-prose-quotes: var(--color-ink);
+  --tw-prose-quote-borders: var(--color-brand);
+  --tw-prose-captions: var(--color-ink-muted);
+  --tw-prose-code: #f5d4ff;
+  --tw-prose-pre-code: #e6e8ee;
+  --tw-prose-pre-bg: #0a0c11;
+  --tw-prose-th-borders: var(--color-border);
+  --tw-prose-td-borders: var(--color-border);
+}
+
+.prose-lesson code {
+  background: rgb(124 92 255 / 0.12);
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.3rem;
+  font-size: 0.9em;
+}
+
+.prose-lesson code::before,
+.prose-lesson code::after {
+  content: '';
+}
+
+.prose-lesson pre code {
+  background: transparent;
+  padding: 0;
+}
+
+/* Subtle scrollbar */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgb(255 255 255 / 0.08);
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgb(255 255 255 / 0.15);
+}
