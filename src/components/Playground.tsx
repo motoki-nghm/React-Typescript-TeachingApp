@@ -4,7 +4,6 @@ import {
   SandpackPreview,
   SandpackProvider,
   SandpackConsole,
-  SandpackTests,
 } from '@codesandbox/sandpack-react';
 import { useState } from 'react';
 import { Code2, Eye, Terminal } from 'lucide-react';
@@ -12,7 +11,7 @@ import type { LessonPlayground } from '../types';
 
 interface PlaygroundProps {
   playground: LessonPlayground;
-  /** Whether the embedded preview is the React preview or vanilla console. */
+  /** Whether to show the iframe preview tab. False for vanilla JS/TS lessons (console only). */
   showPreview?: boolean;
 }
 
@@ -78,18 +77,27 @@ export function Playground({ playground, showPreview = true }: PlaygroundProps) 
       )}
 
       <div className="flex items-center gap-1 px-1">
-        <TabButton
-          active={panel === 'preview'}
-          icon={showPreview ? <Eye size={14} /> : <Terminal size={14} />}
-          label={showPreview ? 'プレビュー' : '実行結果'}
-          onClick={() => setPanel('preview')}
-        />
-        <TabButton
-          active={panel === 'console'}
-          icon={<Terminal size={14} />}
-          label="コンソール"
-          onClick={() => setPanel('console')}
-        />
+        {showPreview ? (
+          <>
+            <TabButton
+              active={panel === 'preview'}
+              icon={<Eye size={14} />}
+              label="プレビュー"
+              onClick={() => setPanel('preview')}
+            />
+            <TabButton
+              active={panel === 'console'}
+              icon={<Terminal size={14} />}
+              label="コンソール"
+              onClick={() => setPanel('console')}
+            />
+          </>
+        ) : (
+          <div className="flex items-center gap-1.5 rounded-lg bg-brand/15 px-3 py-1.5 text-xs font-medium text-brand-soft">
+            <Terminal size={14} />
+            実行結果（コンソール）
+          </div>
+        )}
         <div className="ml-auto flex items-center gap-1 text-xs text-ink-muted">
           <Code2 size={12} />
           <span>編集して保存（Ctrl/Cmd+S）で即反映</span>
@@ -130,16 +138,12 @@ export function Playground({ playground, showPreview = true }: PlaygroundProps) 
               height: 360,
             }}
           >
-            {panel === 'preview' ? (
-              showPreview ? (
-                <SandpackPreview
-                  showOpenInCodeSandbox={false}
-                  showRefreshButton
-                  style={{ height: '100%', background: '#fff' }}
-                />
-              ) : (
-                <SandpackTests style={{ height: '100%' }} />
-              )
+            {showPreview && panel === 'preview' ? (
+              <SandpackPreview
+                showOpenInCodeSandbox={false}
+                showRefreshButton
+                style={{ height: '100%', background: '#fff' }}
+              />
             ) : (
               <SandpackConsole style={{ height: '100%' }} />
             )}

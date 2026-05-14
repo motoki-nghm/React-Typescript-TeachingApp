@@ -1,6 +1,6 @@
-export type LessonChapter = 'ts' | 'react' | 'react-ts';
+export type LessonChapter = 'js' | 'ts' | 'react' | 'react-ts';
 
-export type SandpackTemplate = 'react-ts' | 'vanilla-ts';
+export type SandpackTemplate = 'react-ts' | 'vanilla-ts' | 'vanilla';
 
 export interface SandpackFile {
   /** Path inside the sandbox (e.g. /App.tsx). */

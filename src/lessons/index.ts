@@ -1,4 +1,12 @@
 import type { Lesson, LessonChapter } from '../types';
+import { jsVariables } from './js-01-variables';
+import { jsPrimitives } from './js-02-primitives';
+import { jsFunctions } from './js-03-functions';
+import { jsDestructuring } from './js-04-destructuring';
+import { jsArrayMethods } from './js-05-array-methods';
+import { jsAsync } from './js-06-async';
+import { jsModernSyntax } from './js-07-modern-syntax';
+import { jsTrends } from './js-08-trends';
 import { tsTypes } from './ts-01-types';
 import { tsArrayObject } from './ts-02-array-object';
 import { tsFunctions } from './ts-03-functions';
@@ -12,6 +20,14 @@ import { rtTypedState } from './rt-02-typed-state';
 import { rtEventsEffects } from './rt-03-events-effects';
 
 export const LESSONS: Lesson[] = [
+  jsVariables,
+  jsPrimitives,
+  jsFunctions,
+  jsDestructuring,
+  jsArrayMethods,
+  jsAsync,
+  jsModernSyntax,
+  jsTrends,
   tsTypes,
   tsArrayObject,
   tsFunctions,

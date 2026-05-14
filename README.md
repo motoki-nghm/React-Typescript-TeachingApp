@@ -6,11 +6,12 @@
 
 ## 構成
 
-- **第1章: TypeScript の基礎** (4 レッスン) — `number/string/boolean`、配列とオブジェクト、関数、`type`/`interface`/ユニオン型
-- **第2章: React の基礎** (4 レッスン) — コンポーネント、props、`useState`、イベント・条件・リスト
-- **第3章: React × TypeScript** (3 レッスン) — 型付き props、`useState<T>`、イベント型と `useEffect`
+- **第1章: JavaScript の基礎とトレンド** (8 レッスン) — 変数とスコープ、プリミティブ型、関数とアロー、分割代入とスプレッド、配列メソッド、Promise/async-await、`?.`/`??`/論理代入、ES2023–2025 トレンド (`Object.groupBy` / Set methods / `Promise.withResolvers` / `structuredClone` / Iterator helpers)
+- **第2章: TypeScript の基礎** (4 レッスン) — `number/string/boolean`、配列とオブジェクト、関数、`type`/`interface`/ユニオン型
+- **第3章: React の基礎** (4 レッスン) — コンポーネント、props、`useState`、イベント・条件・リスト
+- **第4章: React × TypeScript** (3 レッスン) — 型付き props、`useState<T>`、イベント型と `useEffect`
 
-合計 11 レッスン、約 80 分。
+合計 19 レッスン、約 150 分。
 
 ## 主要技術
 
